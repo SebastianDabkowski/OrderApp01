@@ -1,0 +1,21 @@
+@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<header>
+    <h1>@ViewData["Title"]</h1>
+    @{
+        if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <p>You have been successfully logged out.</p>
+            <p><a asp-page="/Index">Return to Home</a></p>
+        }
+        else
+        {
+            <p>You are not currently logged in.</p>
+            <p><a asp-page="/Index">Return to Home</a></p>
+        }
+    }
+</header>

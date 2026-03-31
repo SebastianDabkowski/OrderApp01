@@ -1,0 +1,11 @@
+@page
+@model LockoutModel
+@{
+    ViewData["Title"] = "Locked out";
+}
+
+<header>
+    <h1 class="text-danger">@ViewData["Title"]</h1>
+    <p class="text-danger">Your account has been locked out due to too many failed login attempts.</p>
+    <p class="text-danger">Please try again in a few minutes or contact support if you need assistance.</p>
+</header>

@@ -1,0 +1,22 @@
+@page
+@model ExternalLoginModel
+@{
+    ViewData["Title"] = "Complete Registration";
+}
+
+<h1>@ViewData["Title"]</h1>
+<h2>Associate your @Model.ProviderDisplayName account.</h2>
+<hr />
+
+<p class="text-info">
+    You've successfully authenticated with <strong>@Model.ProviderDisplayName</strong>.
+    Please enter additional information to complete your registration as a buyer.
+</p>
+
+<div class="row">
+    
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
