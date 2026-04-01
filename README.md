@@ -1,4 +1,4 @@
-# Mercato
+# OrderApp
 Multi-Vendor Marketplace Platform
 
 ## Overview
