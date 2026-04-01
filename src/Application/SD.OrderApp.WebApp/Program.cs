@@ -1,7 +1,15 @@
+using SD.OrderApp.Modules.Order.Application;
+using SD.OrderApp.Modules.Order.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
+
+// Register table session services
+builder.Services.AddSingleton<ITableSessionRepository, InMemoryTableSessionRepository>();
+builder.Services.AddScoped<ITableSessionService, TableSessionService>();
 
 var app = builder.Build();
 
@@ -22,5 +30,6 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
+app.MapControllers();
 
 app.Run();
