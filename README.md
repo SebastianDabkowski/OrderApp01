@@ -1,8 +1,8 @@
-\# Restaurant Table Ordering System
+# Restaurant Table Ordering System
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -18,7 +18,7 @@ The application is designed as a simple, fast, and mobile-first solution that ru
 
 
 
-\## Business Goal
+## Business Goal
 
 
 
@@ -26,13 +26,13 @@ The primary goals of the system are:
 
 
 
-\- Improve customer experience by eliminating waiting time
+- Improve customer experience by eliminating waiting time
 
-\- Increase revenue by enabling faster and more frequent ordering
+- Increase revenue by enabling faster and more frequent ordering
 
-\- Reduce communication errors between waiter and kitchen
+- Reduce communication errors between waiter and kitchen
 
-\- Streamline restaurant operations
+- Streamline restaurant operations
 
 
 
@@ -40,7 +40,7 @@ The system is initially designed for a single restaurant but must be ready for f
 
 
 
-\## Users
+## Users
 
 
 
@@ -48,7 +48,7 @@ The system supports the following roles:
 
 
 
-\- \*\*Guest\*\*
+- **Guest**
 
 &#x20; - Scans QR code
 
@@ -62,7 +62,7 @@ The system supports the following roles:
 
 
 
-\- \*\*Kitchen Staff\*\*
+- **Kitchen Staff**
 
 &#x20; - Receives orders
 
@@ -72,13 +72,13 @@ The system supports the following roles:
 
 
 
-\- \*\*Waiter\*\*
+- **Waiter**
 
 &#x20; - Marks orders as delivered
 
 
 
-\- \*\*Admin / Manager\*\*
+- **Admin / Manager**
 
 &#x20; - Manages menu
 
@@ -86,7 +86,7 @@ The system supports the following roles:
 
 
 
-\## MVP Scope
+## MVP Scope
 
 
 
@@ -94,21 +94,21 @@ The MVP focuses on the core ordering flow:
 
 
 
-\- QR code-based table session
+- QR code-based table session
 
-\- Anonymous user flow (no login)
+- Anonymous user flow (no login)
 
-\- Menu browsing with allergens (including daily variations)
+- Menu browsing with allergens (including daily variations)
 
-\- Order creation and submission
+- Order creation and submission
 
-\- Kitchen board with order queue
+- Kitchen board with order queue
 
-\- Manual preparation time estimation
+- Manual preparation time estimation
 
-\- Real-time order status updates
+- Real-time order status updates
 
-\- Delivery confirmation by waiter
+- Delivery confirmation by waiter
 
 
 
@@ -116,85 +116,85 @@ Out of scope for MVP:
 
 
 
-\- Online payments
+- Online payments
 
-\- POS / ERP integrations
+- POS / ERP integrations
 
-\- Advanced analytics
+- Advanced analytics
 
-\- User accounts and history
+- User accounts and history
 
-\- Offline mode
-
-
-
-\## Key Features
+- Offline mode
 
 
 
-\### Table Session \& Ordering
-
-\- QR code scanning
-
-\- Anonymous session per table
-
-\- Multiple users per table
-
-\- Order creation and submission
-
-\- No editing after submission
+## Key Features
 
 
 
-\### Menu Management
+### Table Session \& Ordering
 
-\- Menu CRUD
+- QR code scanning
 
-\- Dynamic allergen handling (including daily changes)
+- Anonymous session per table
 
-\- Dish availability management
+- Multiple users per table
 
-\- Real-time menu updates
+- Order creation and submission
 
-
-
-\### Kitchen Fulfilment
-
-\- Kitchen board (order queue)
-
-\- Routing (kitchen vs bar)
-
-\- Order statuses
-
-\- Manual preparation time setting
-
-\- Alerts for new orders
+- No editing after submission
 
 
 
-\### Delivery
+### Menu Management
 
-\- Mark order as delivered
+- Menu CRUD
 
-\- Simple waiter interface (minimal UI)
+- Dynamic allergen handling (including daily changes)
 
-\- Status synchronization with guest
+- Dish availability management
 
-
-
-\### Feedback
-
-\- Rating per order
-
-\- Average rating per dish
+- Real-time menu updates
 
 
 
-\## Architecture
+### Kitchen Fulfilment
+
+- Kitchen board (order queue)
+
+- Routing (kitchen vs bar)
+
+- Order statuses
+
+- Manual preparation time setting
+
+- Alerts for new orders
 
 
 
-The system follows a \*\*Modular Monolith\*\* approach.
+### Delivery
+
+- Mark order as delivered
+
+- Simple waiter interface (minimal UI)
+
+- Status synchronization with guest
+
+
+
+### Feedback
+
+- Rating per order
+
+- Average rating per dish
+
+
+
+## Architecture
+
+
+
+The system follows a **Modular Monolith** approach.
 
 
 
@@ -202,15 +202,15 @@ Core bounded contexts:
 
 
 
-\- Table Session \& Ordering
+- Table Session \& Ordering
 
-\- Menu Management
+- Menu Management
 
-\- Kitchen Fulfilment
+- Kitchen Fulfilment
 
-\- Delivery
+- Delivery
 
-\- Feedback
+- Feedback
 
 
 
@@ -218,43 +218,43 @@ Key principles:
 
 
 
-\- Clear domain boundaries (DDD)
+- Clear domain boundaries (DDD)
 
-\- API-first internal communication
+- API-first internal communication
 
-\- Event-driven communication between modules
+- Event-driven communication between modules
 
-\- Read models for UI performance
+- Read models for UI performance
 
-\- Prepared for future extraction to microservices
+- Prepared for future extraction to microservices
 
 
 
 See architecture details in:
 
-\- `docs/architecture.md` :contentReference\[oaicite:0]{index=0}
+- `docs/architecture.md` :contentReference\[oaicite:0]{index=0}
 
-\- ADRs in `docs/adr/` :contentReference\[oaicite:1]{index=1}
-
-
-
-\## Technology Stack (Proposed)
+- ADRs in `docs/adr/` :contentReference\[oaicite:1]{index=1}
 
 
 
-\- Frontend: Angular (mobile-first web app)
-
-\- Backend: .NET (C#)
-
-\- Database: SQL Server
-
-\- Hosting: Azure
-
-\- Realtime: WebSockets / SignalR
+## Technology Stack (Proposed)
 
 
 
-\## Non-Functional Requirements
+- Frontend: Angular (mobile-first web app)
+
+- Backend: .NET (C#)
+
+- Database: SQL Server
+
+- Hosting: Azure
+
+- Realtime: WebSockets / SignalR
+
+
+
+## Non-Functional Requirements
 
 
 
@@ -262,15 +262,15 @@ Key system characteristics:
 
 
 
-\- High responsiveness during peak hours
+- High responsiveness during peak hours
 
-\- Reliability during restaurant working hours
+- Reliability during restaurant working hours
 
-\- Real-time updates for orders and statuses
+- Real-time updates for orders and statuses
 
-\- Simplicity of use (critical UX requirement)
+- Simplicity of use (critical UX requirement)
 
-\- Scalability for future multi-location setup
+- Scalability for future multi-location setup
 
 
 
@@ -278,7 +278,7 @@ Reference: system characteristics worksheet :contentReference\[oaicite:2]{index=
 
 
 
-\## Documentation Approach
+## Documentation Approach
 
 
 
@@ -286,13 +286,13 @@ The project uses structured documentation:
 
 
 
-\- PRD → business requirements :contentReference\[oaicite:3]{index=3}
+- PRD → business requirements :contentReference\[oaicite:3]{index=3}
 
-\- ADR → architectural decisions :contentReference\[oaicite:4]{index=4}
+- ADR → architectural decisions :contentReference\[oaicite:4]{index=4}
 
-\- Epics → delivery scope (JSON format) :contentReference\[oaicite:5]{index=5}
+- Epics → delivery scope (JSON format) :contentReference\[oaicite:5]{index=5}
 
-\- Architecture → system design :contentReference\[oaicite:6]{index=6}
+- Architecture → system design :contentReference\[oaicite:6]{index=6}
 
 
 
@@ -300,31 +300,31 @@ This ensures traceability from business goals to implementation.
 
 
 
-\## Project Status
+## Project Status
 
 
 
-\- Discovery completed (client interviews, event storming)
+- Discovery completed (client interviews, event storming)
 
-\- MVP scope defined
+- MVP scope defined
 
-\- Architecture defined (modular monolith)
+- Architecture defined (modular monolith)
 
-\- Ready for implementation phase
-
-
-
-\## Next Steps
+- Ready for implementation phase
 
 
 
-\- Finalize backlog (epics and user stories)
+## Next Steps
 
-\- Define API contracts between modules
 
-\- Prepare initial database model
 
-\- Start implementation of core modules:
+- Finalize backlog (epics and user stories)
+
+- Define API contracts between modules
+
+- Prepare initial database model
+
+- Start implementation of core modules:
 
 &#x20; - Ordering
 
@@ -334,7 +334,7 @@ This ensures traceability from business goals to implementation.
 
 
 
-\## Notes
+## Notes
 
 
 
@@ -348,11 +348,11 @@ Future evolution may include:
 
 
 
-\- Online payments
+- Online payments
 
-\- POS integration
+- POS integration
 
-\- Multi-restaurant support
+- Multi-restaurant support
 
-\- Advanced analytics
+- Advanced analytics
 
