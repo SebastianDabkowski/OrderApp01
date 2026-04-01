@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\SD.OrderApp.Modules.Cook\SD.OrderApp.Modules.Cook.csproj" />
+    <ProjectReference Include="..\..\Modules\SD.OrderApp.Modules.Order\SD.OrderApp.Modules.Order.csproj" />
+    <ProjectReference Include="..\..\Modules\SD.OrderApp.Modules.Rate\SD.OrderApp.Modules.Rate.csproj" />
+    <ProjectReference Include="..\..\Modules\SD.OrderApp.Modules.Serve\SD.OrderApp.Modules.Serve.csproj" />
+    <ProjectReference Include="..\..\Modules\SD.ProjectName.Modules.Products\SD.OrderApp.Modules.Products.csproj" />
+  </ItemGroup>
+
+</Project>
