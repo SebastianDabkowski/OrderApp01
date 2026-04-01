@@ -1,57 +1,358 @@
-# Mercato
-Multi-Vendor Marketplace Platform
+\# Restaurant Table Ordering System
 
-## Overview
-Mercato is a multi-vendor marketplace platform that connects buyers and sellers in one unified system. Sellers can onboard, manage products, handle orders and payouts, while buyers can browse multiple stores, purchase in a single checkout, and track orders centrally.
 
-The primary goal is to deliver a scalable marketplace MVP that validates the business model and can evolve into a full e-commerce ecosystem.
 
-## Business Goal
-Mercato is built around a commission-based revenue model. The platform earns when sellers generate sales. Additional monetization options such as subscriptions, promoted listings, or premium seller features are planned for later phases.
+\## Overview
 
-## Users
-The platform serves three main user groups:
-- Buyers who browse products, place orders, and manage purchase history.
-- Sellers who manage stores, catalogs, orders, and payouts.
-- Administrators who moderate content, configure the platform, and monitor KPIs.
 
-## MVP Scope
-The MVP focuses on a complete end-to-end purchase flow:
-- User registration and authentication.
-- Seller onboarding and store profiles.
-- Product catalog management.
-- Search, filtering, and browsing.
-- Shopping cart and checkout.
-- Online payments with escrow logic.
-- Basic order management and status tracking.
-- Email notifications.
 
-Out of scope for MVP are mobile apps, loyalty programs, advanced analytics, and deep third-party integrations.
+Restaurant Table Ordering System is a web-based application that enables guests to order food directly from their table using a QR code.
 
-## Architecture
-Mercato follows a modular monolith approach. Core domains such as identity, catalog, orders, and payments are clearly separated at the code and responsibility level. The architecture is cloud-ready and designed to support future scaling and service extraction if required.
 
-Key architectural principles:
-- Clear module boundaries.
-- API-first thinking inside the system.
-- Cloud deployment with scalability and security in mind.
-- Readiness for future integrations.
 
-## Security and Compliance
-The platform is designed to be GDPR-compliant. Mercato acts as the central data controller. Sellers receive access only to data required to fulfill orders. Security, access control, auditability, and secure payment handling are treated as first-class concerns.
+The system removes the need to wait for a waiter, improves customer experience, and increases order volume by making the menu always accessible.
 
-## Documentation Approach
+
+
+The application is designed as a simple, fast, and mobile-first solution that runs in the browser without installation.
+
+
+
+\## Business Goal
+
+
+
+The primary goals of the system are:
+
+
+
+\- Improve customer experience by eliminating waiting time
+
+\- Increase revenue by enabling faster and more frequent ordering
+
+\- Reduce communication errors between waiter and kitchen
+
+\- Streamline restaurant operations
+
+
+
+The system is initially designed for a single restaurant but must be ready for future scaling to multiple locations.
+
+
+
+\## Users
+
+
+
+The system supports the following roles:
+
+
+
+\- \*\*Guest\*\*
+
+&#x20; - Scans QR code
+
+&#x20; - Browses menu
+
+&#x20; - Places orders
+
+&#x20; - Sees estimated preparation time
+
+&#x20; - Rates dishes
+
+
+
+\- \*\*Kitchen Staff\*\*
+
+&#x20; - Receives orders
+
+&#x20; - Manages preparation workflow
+
+&#x20; - Sets preparation time
+
+
+
+\- \*\*Waiter\*\*
+
+&#x20; - Marks orders as delivered
+
+
+
+\- \*\*Admin / Manager\*\*
+
+&#x20; - Manages menu
+
+&#x20; - Monitors orders and basic statistics
+
+
+
+\## MVP Scope
+
+
+
+The MVP focuses on the core ordering flow:
+
+
+
+\- QR code-based table session
+
+\- Anonymous user flow (no login)
+
+\- Menu browsing with allergens (including daily variations)
+
+\- Order creation and submission
+
+\- Kitchen board with order queue
+
+\- Manual preparation time estimation
+
+\- Real-time order status updates
+
+\- Delivery confirmation by waiter
+
+
+
+Out of scope for MVP:
+
+
+
+\- Online payments
+
+\- POS / ERP integrations
+
+\- Advanced analytics
+
+\- User accounts and history
+
+\- Offline mode
+
+
+
+\## Key Features
+
+
+
+\### Table Session \& Ordering
+
+\- QR code scanning
+
+\- Anonymous session per table
+
+\- Multiple users per table
+
+\- Order creation and submission
+
+\- No editing after submission
+
+
+
+\### Menu Management
+
+\- Menu CRUD
+
+\- Dynamic allergen handling (including daily changes)
+
+\- Dish availability management
+
+\- Real-time menu updates
+
+
+
+\### Kitchen Fulfilment
+
+\- Kitchen board (order queue)
+
+\- Routing (kitchen vs bar)
+
+\- Order statuses
+
+\- Manual preparation time setting
+
+\- Alerts for new orders
+
+
+
+\### Delivery
+
+\- Mark order as delivered
+
+\- Simple waiter interface (minimal UI)
+
+\- Status synchronization with guest
+
+
+
+\### Feedback
+
+\- Rating per order
+
+\- Average rating per dish
+
+
+
+\## Architecture
+
+
+
+The system follows a \*\*Modular Monolith\*\* approach.
+
+
+
+Core bounded contexts:
+
+
+
+\- Table Session \& Ordering
+
+\- Menu Management
+
+\- Kitchen Fulfilment
+
+\- Delivery
+
+\- Feedback
+
+
+
+Key principles:
+
+
+
+\- Clear domain boundaries (DDD)
+
+\- API-first internal communication
+
+\- Event-driven communication between modules
+
+\- Read models for UI performance
+
+\- Prepared for future extraction to microservices
+
+
+
+See architecture details in:
+
+\- `docs/architecture.md` :contentReference\[oaicite:0]{index=0}
+
+\- ADRs in `docs/adr/` :contentReference\[oaicite:1]{index=1}
+
+
+
+\## Technology Stack (Proposed)
+
+
+
+\- Frontend: Angular (mobile-first web app)
+
+\- Backend: .NET (C#)
+
+\- Database: SQL Server
+
+\- Hosting: Azure
+
+\- Realtime: WebSockets / SignalR
+
+
+
+\## Non-Functional Requirements
+
+
+
+Key system characteristics:
+
+
+
+\- High responsiveness during peak hours
+
+\- Reliability during restaurant working hours
+
+\- Real-time updates for orders and statuses
+
+\- Simplicity of use (critical UX requirement)
+
+\- Scalability for future multi-location setup
+
+
+
+Reference: system characteristics worksheet :contentReference\[oaicite:2]{index=2}
+
+
+
+\## Documentation Approach
+
+
+
 The project uses structured documentation:
-- PRD for product requirements.
-- ADRs for architectural decisions.
-- Epics and user stories defined in structured JSON.
+
+
+
+\- PRD → business requirements :contentReference\[oaicite:3]{index=3}
+
+\- ADR → architectural decisions :contentReference\[oaicite:4]{index=4}
+
+\- Epics → delivery scope (JSON format) :contentReference\[oaicite:5]{index=5}
+
+\- Architecture → system design :contentReference\[oaicite:6]{index=6}
+
+
+
 This ensures traceability from business goals to implementation.
 
-## Project Status
-The project is in the MVP definition and architecture phase. Requirements and scope are validated based on stakeholder interviews. Development is planned to proceed iteratively, starting with core marketplace capabilities.
 
-## Next Steps
-- Finalize MVP backlog.
-- Confirm technology stack and cloud provider.
-- Prepare development estimates.
-- Start implementation of core modules.
+
+\## Project Status
+
+
+
+\- Discovery completed (client interviews, event storming)
+
+\- MVP scope defined
+
+\- Architecture defined (modular monolith)
+
+\- Ready for implementation phase
+
+
+
+\## Next Steps
+
+
+
+\- Finalize backlog (epics and user stories)
+
+\- Define API contracts between modules
+
+\- Prepare initial database model
+
+\- Start implementation of core modules:
+
+&#x20; - Ordering
+
+&#x20; - Kitchen
+
+&#x20; - Menu
+
+
+
+\## Notes
+
+
+
+The system is designed with simplicity as a key constraint.  
+
+Any additional feature should be evaluated against its impact on usability and operational complexity.
+
+
+
+Future evolution may include:
+
+
+
+\- Online payments
+
+\- POS integration
+
+\- Multi-restaurant support
+
+\- Advanced analytics
+

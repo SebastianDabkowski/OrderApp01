@@ -1,141 +1,74 @@
 # Product Requirements Document (PRD)
 
-# Mercato -- Multi-Vendor Marketplace Platform
-
 ## 1. Product Overview
+System umożliwia klientom restauracji składanie zamówień przy stoliku poprzez QR code i aplikację webową.
 
-Mercato is a multi-vendor marketplace platform enabling independent
-sellers and online stores to sell products within one unified ecosystem.
-
-The platform solves the problem of fragmented e-commerce presence among
-small and medium sellers by providing centralized traffic, payment
-processing, order management, and seller tools.
-
-Primary revenue model: - Commission on transactions (percentage of
-GMV) - Future premium subscriptions and promotional placements
-
-Primary objective: - Launch scalable marketplace MVP - Reach 100+ active
-sellers in first year - Achieve growing GMV and buyer base
-
-------------------------------------------------------------------------
+Cel:
+- skrócenie czasu oczekiwania
+- zwiększenie sprzedaży
+- redukcja błędów komunikacyjnych
 
 ## 2. Project Scope
 
-### Included in MVP
+### In scope (MVP)
+- QR code i sesja stolika
+- menu + alergeny
+- zamówienia
+- kitchen board + ETA
+- delivery status
+- rating
 
--   Buyer and seller registration
--   Seller store profile
--   Product listing management
--   Product browsing and filtering
--   Shopping cart
--   Centralized escrow payment
--   Order management
--   Seller panel
--   Admin dashboard
--   Commission calculation
--   Basic reporting
--   GDPR compliance
--   Responsive web application
+### Out of scope
+- płatności online
+- integracje POS
+- logowanie
+- offline
 
-### Out of Scope (MVP)
+## 3. Users
 
--   Native mobile apps
--   Advanced recommendations
--   Advertising system
--   Advanced analytics
--   Deep ERP integrations
--   Loyalty programs
+Guest – zamawia  
+Waiter – oznacza dostarczenie  
+Kitchen – realizuje zamówienia  
+Manager – podgląd danych  
 
-------------------------------------------------------------------------
+## 4. Core Flow
 
-## 3. Users and Personas
-
-### Buyer
-
-Goal: Find and purchase products securely. Challenges: Trust and
-simplicity. Support: Unified checkout and secure payment.
-
-### Seller
-
-Goal: Sell products and manage orders efficiently. Challenges: Manual
-listing and commission transparency. Support: Seller panel, CSV import,
-automated settlement.
-
-### Administrator
-
-Goal: Monitor GMV and platform growth. Support: Dashboard and reporting.
-
-------------------------------------------------------------------------
-
-## 4. Core Transaction Flow
-
-1.  Buyer logs in
-2.  Browses products
-3.  Adds to cart
-4.  Completes checkout
-5.  Payment processed centrally
-6.  Order created
-7.  Seller notified
-8.  Seller ships product
-9.  Funds released minus commission
-
-------------------------------------------------------------------------
+1. Scan QR
+2. Browse menu
+3. Submit order
+4. Kitchen processes
+5. Delivery
+6. Rating
 
 ## 5. Functional Requirements
 
--   Authentication and role management
--   Seller product CRUD
--   Category and search system
--   Multi-seller cart
--   Escrow payment integration
--   Commission deduction logic
--   Admin metrics dashboard
--   Seller monthly reports
-
-------------------------------------------------------------------------
+- Table session
+- Order management
+- Menu management
+- Kitchen fulfilment
+- Delivery
+- Feedback
 
 ## 6. Non-Functional Requirements
 
-Performance: - Page load under 3 seconds
+- Performance < 2s
+- High availability in opening hours
+- Scalability (future multi-restaurant)
+- Audit log
 
-Scalability: - Cloud-native deployment - Modular architecture
+## 7. Data Model
 
-Security: - Encrypted data - Secure OAuth login - Role-based
-authorization
+- TableSession
+- Order
+- Dish
+- Rating
 
-Compliance: - GDPR compliance - Data minimization - Right to erasure
+## 8. MVP
 
-------------------------------------------------------------------------
+QR → Menu → Order → Kitchen → ETA
 
-## 7. Integrations
+## 9. Future
 
-MVP: - Payment Gateway API - Email service
-
-Future: - CSV import/export - Public API - ERP/WMS integration - Courier
-automation
-
-------------------------------------------------------------------------
-
-## 8. Success Metrics
-
-Within 12 months: - 100+ active sellers - 10k+ buyers - Growing monthly
-transactions - 1--2M PLN GMV - Positive feedback
-
-------------------------------------------------------------------------
-
-## 9. MVP Definition
-
-Must include: - Seller onboarding - Product listing - Buyer checkout -
-Escrow payment - Commission handling - Basic reporting - Admin
-dashboard - Responsive UI - GDPR compliance
-
-------------------------------------------------------------------------
-
-## 10. Future Enhancements
-
--   Native mobile apps
--   Recommendation engine
--   Advertising system
--   Loyalty program
--   Multi-role seller accounts
--   Advanced analytics
+- Payments
+- POS integration
+- Analytics
