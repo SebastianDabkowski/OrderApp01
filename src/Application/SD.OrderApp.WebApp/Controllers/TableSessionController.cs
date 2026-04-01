@@ -17,9 +17,6 @@ public class TableSessionController : ControllerBase
     [HttpPost("start")]
     public async Task<IActionResult> StartSession([FromBody] StartSessionRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.TableIdentifier))
-            return BadRequest(new { error = "Table identifier is required." });
-
         var result = await _tableSessionService.StartOrJoinSessionAsync(request.TableIdentifier);
         return Ok(result);
     }
@@ -27,5 +24,6 @@ public class TableSessionController : ControllerBase
 
 public class StartSessionRequest
 {
+    [System.ComponentModel.DataAnnotations.Required]
     public string TableIdentifier { get; set; } = default!;
 }
